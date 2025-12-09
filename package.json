@@ -39,7 +39,14 @@
             "dist/credentials/veniceAiApi.credentials.js"
         ],
         "nodes": [
-            "dist/nodes/VeniceAi/VeniceAi.node.js"
+            "dist/nodes/VeniceAi/VeniceAi.node.js",
+            "dist/nodes/VeniceAiTools/VeniceImageGenerateTool.node.js",
+            "dist/nodes/VeniceAiTools/VeniceImageUpscaleTool.node.js",
+            "dist/nodes/VeniceAiTools/VeniceTextToSpeechTool.node.js",
+            "dist/nodes/VeniceAiTools/VeniceEmbeddingsTool.node.js",
+            "dist/nodes/VeniceAiTools/VeniceListModelsTool.node.js",
+            "dist/nodes/VeniceAiTools/VeniceChatTool.node.js",
+            "dist/nodes/VeniceAiTools/VeniceListCharactersTool.node.js"
         ]
     },
     "devDependencies": {
@@ -48,12 +55,12 @@
         "eslint": "^8.56.0",
         "eslint-plugin-n8n-nodes-base": "^1.16.1",
         "gulp": "^5.0.0",
-        "n8n-workflow": "*",
+        "n8n-workflow": "1.48.0",
         "prettier": "^3.3.2",
         "typescript": "^5.5.3"
     },
     "peerDependencies": {
-        "n8n-workflow": "*"
+        "n8n-workflow": ">=1.48.0"
     },
     "dependencies": {
         "buffer": "^6.0.3"
