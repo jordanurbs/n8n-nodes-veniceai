@@ -122,6 +122,63 @@ The node supports tool selection for AI model function calling:
 - Tools are included in API calls to the Venice API
 - Enables more interactive and capable AI assistants
 
+## AI Agent Tools
+
+This package includes **7 AI Agent Tools** that can be used with n8n's AI Agent nodes. These tools have `usableAsTool: true`, allowing AI Agents to dynamically call Venice.ai capabilities.
+
+### Available Tools
+
+| Tool | Description |
+|------|-------------|
+| **Venice Chat Tool** | Send chat messages to Venice AI LLMs for sub-conversations |
+| **Venice Image Generate Tool** | Generate images from text prompts |
+| **Venice Image Upscale Tool** | Upscale and enhance images |
+| **Venice Text to Speech Tool** | Convert text to speech audio |
+| **Venice Embeddings Tool** | Generate text embeddings for semantic search and RAG |
+| **Venice List Models Tool** | List available Venice AI models by type |
+| **Venice List Characters Tool** | List available Venice AI character personas |
+
+### Using with AI Agents
+
+1. Add an **AI Agent** node to your workflow
+2. Connect any Venice AI Tool to the agent's tools input
+3. The AI Agent can now dynamically decide when to use Venice.ai capabilities
+
+### Tool Details
+
+#### Venice Chat Tool
+- Sub-conversations with Venice LLMs
+- Supports system prompts, temperature, max tokens
+- Optional character persona support
+- Web search enable/disable
+
+#### Venice Image Generate Tool
+- Models: fluently-xl, flux-dev, stable-diffusion-3.5, hidream
+- Configurable dimensions, steps, CFG scale
+- Style presets and negative prompts
+
+#### Venice Image Upscale Tool
+- 2x or 4x upscaling
+- Enhancement mode with creativity control
+- Custom enhancement prompts
+
+#### Venice Text to Speech Tool
+- Multiple voices (male/female)
+- Adjustable speed (0.25x - 4x)
+- Multiple formats: MP3, Opus, AAC, FLAC, WAV, PCM
+
+#### Venice Embeddings Tool
+- Models: BGE-M3, Ada 002
+- Float or Base64 encoding format
+- For semantic search and RAG pipelines
+
+#### Venice List Models Tool
+- Filter by type: text, image, embedding, TTS, ASR, upscale
+
+#### Venice List Characters Tool
+- Returns character IDs, names, descriptions
+- Use with Venice Chat Tool for persona-based conversations
+
 ## Credentials
 
 Venice's API is protected via API keys. To generate a key, you must be a [Venice Pro User](https://venice.ai/pricing).
@@ -136,6 +193,12 @@ Tested on n8n Version 1.71.3+
 * [Venice.ai API reference](https://docs.venice.ai/api-reference/api-spec)
 
 ## Changelog
+
+### v2.0.0
+- Added 7 AI Agent Tools for use with n8n AI Agent nodes
+- New tools: Venice Chat, Image Generate, Image Upscale, Text to Speech, Embeddings, List Models, List Characters
+- All tools have `usableAsTool: true` for AI Agent integration
+- Tools allow AI Agents to dynamically call Venice.ai capabilities
 
 ### v1.1.0
 - First public version
